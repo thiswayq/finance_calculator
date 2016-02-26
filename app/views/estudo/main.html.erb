@@ -1,0 +1,28 @@
+<div ng-app="module_financeiro" ng-controller="calculadora_financeiro">
+	<div class="container">
+		<form class="form-horizontal">
+			<div class="form-group center">
+				<h2>Insira a porcentagem desejada para conversão:</h2>
+				<input type="number" ng-model="percentage" lang="nb" class="form-control center-block" style="width: 200px;">
+			</div>
+		</form>
+		<div class="row">
+			<div class="col-sm-4">
+				<h5>Taxa mensal para anual:</h5>
+				<input value="Calcular!" class="btn btn-primary" type="submit" ng-click="result_month_for_year(percentage)"> 
+				<input type="textarea" value="{{result_monthtoyear | number: 2}} %">
+			</div>
+			<div class="col-sm-4">
+				<h5>Taxa anual para mensal:</h5>
+				<input value="Calcular!" class="btn btn-primary" type="submit" ng-click="result_year_for_month(percentage)"> 
+				<input type="textarea" value="{{result_yeartomonth | number: 2}} %">
+			</div>
+			<div class="col-sm-4">
+				<h5>Taxa anual ou mensal para dias:</h5>
+				<input type="number" ng-model="days" lang="nb" style="width:50px;" placeholder="Dias">
+				<input value="Calcular!" class="btn btn-primary" type="submit" ng-click="result_year_for_days(percentage, days)"> 
+				<input type="textarea" value="{{result_yeartodays | number: 2}} %">
+			</div>
+		</div>
+	</div>
+</div>
